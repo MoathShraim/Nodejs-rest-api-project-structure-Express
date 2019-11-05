@@ -1,5 +1,5 @@
 # Node.js, Express and MongoDB Project Structure 
-This project is written on ES6+ and build on MVC Architecture seperating business logic from application logic.
+This is a basic project to help you to start building your own API using Express framework and MongoDB. This project structure based on MVC Architecture.
 
 # Features
 - Fundamental of Express: routing, middleware, sending response and more
