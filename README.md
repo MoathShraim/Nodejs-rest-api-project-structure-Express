@@ -1,4 +1,4 @@
-# node-js-restful-apis-project-structure
+# Node.js, Express and MongoDB Project Structure 
 This project structure is perfect for starting your own applications by building a RESTful APIs using Express and MongoDB
 
 Features
