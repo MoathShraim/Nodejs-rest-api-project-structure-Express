@@ -11,7 +11,7 @@ This project is written on ES6+ and build on MVC Architecture seperating busines
 - Authorization (User roles and permissions)
 - Error handling
 - Enviroment Varaibles
-- handling error outside Express for example database is down
+- handling error outside Express
 - Catching Uncaught Exception
 
 # Project Structure
