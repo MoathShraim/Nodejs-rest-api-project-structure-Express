@@ -1,5 +1,6 @@
 # Node.js, Express and MongoDB Project Structure 
-This is a basic project to help you to start building your own API using Express framework and MongoDB with a good structure practices based on MVC Architecture.
+This is a basic project structure to help you to start building your own RESTful web APIs (for Android, IOS, or JavaScript framworks) using Express framework and MongoDB with a good structure practices based on clean MVC Architecture.
+
 
 # Features
 - Fundamental of Express: routing, middleware, sending response and more
