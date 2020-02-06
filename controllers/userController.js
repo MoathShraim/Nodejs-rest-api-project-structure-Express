@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const base = require('./baseController');
+const logger = require('./utils/logger');
 
 exports.deleteMe = async (req, res, next) => {
     try {
@@ -14,6 +15,7 @@ exports.deleteMe = async (req, res, next) => {
 
 
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 };

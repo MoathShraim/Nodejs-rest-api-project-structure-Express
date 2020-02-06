@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const logger = require("./utils/logger");
+
 dotenv.config({
     path: './config.env'
 });
@@ -7,6 +9,7 @@ dotenv.config({
 process.on('uncaughtException', err => {
     console.log('UNCAUGHT EXCEPTION!!! shutting down...');
     console.log(err.name, err.message);
+    logger.error(`UNCAUGHT REJECTON!!! shutting down: ${err.name, err.message}`);
     process.exit(1);
 });
 
@@ -32,6 +35,7 @@ app.listen(port, () => {
 process.on('unhandledRejection', err => {
     console.log('UNHANDLED REJECTION!!!  shutting down ...');
     console.log(err.name, err.message);
+    logger.error(`UNHANDLED REJECTON!!! shutting down: ${err.name, err.message}`);
     server.close(() => {
         process.exit(1);
     });
