@@ -1,5 +1,6 @@
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
+const logger = require('./utils/logger');
 
 exports.deleteOne = Model => async (req, res, next) => {
     try {
@@ -14,6 +15,7 @@ exports.deleteOne = Model => async (req, res, next) => {
             data: null
         });
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 };
@@ -37,6 +39,7 @@ exports.updateOne = Model => async (req, res, next) => {
         });
 
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 };
@@ -53,6 +56,7 @@ exports.createOne = Model => async (req, res, next) => {
         });
 
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 };
@@ -72,6 +76,7 @@ exports.getOne = Model => async (req, res, next) => {
             }
         });
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 };
@@ -93,6 +98,7 @@ exports.getAll = Model => async (req, res, next) => {
         });
 
     } catch (error) {
+        logger.error(error);
         next(error);
     }
 

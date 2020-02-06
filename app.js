@@ -6,6 +6,8 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 
+const httpLogger = require('./middlewares/httpLogger');
+const logger = require('./utils/logger');
 
 const userRoutes = require('./routes/userRoutes');
 const globalErrHandler = require('./controllers/errorController');
@@ -17,6 +19,9 @@ app.use(cors());
 
 // Set security HTTP headers
 app.use(helmet());
+
+//implementation logging
+app.use(httpLogger);
 
 // Limit request from the same API 
 const limiter = rateLimit({
@@ -47,6 +52,7 @@ app.use('/api/v1/users', userRoutes);
 // handle undefined Routes
 app.use('*', (req, res, next) => {
     const err = new AppError(404, 'fail', 'undefined route');
+    logger.info(`undefined route: ${req.baseUrl}`);
     next(err, req, res, next);
 });
 

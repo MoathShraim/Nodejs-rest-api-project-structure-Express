@@ -4,7 +4,7 @@ const {
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const AppError = require('../utils/appError');
-
+const logger = require("./utils/logger");
 
 const createToken = id => {
     return jwt.sign({
@@ -50,6 +50,7 @@ exports.login = async (req, res, next) => {
         });
 
     } catch (err) {
+        logger.error(err);
         next(err);
     }
 };
@@ -77,6 +78,7 @@ exports.signup = async (req, res, next) => {
         });
 
     } catch (err) {
+        logger.error(err);
         next(err);
     }
 
@@ -107,6 +109,7 @@ exports.protect = async (req, res, next) => {
         next();
 
     } catch (err) {
+        logger.error(err);
         next(err);
     }
 };
