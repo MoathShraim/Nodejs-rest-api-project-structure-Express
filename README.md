@@ -5,7 +5,7 @@ This is a basic project structure to help you to start building your own RESTful
 # Features
 - Fundamental of Express: routing, middleware, sending response and more
 - Fundamental of Mongoose: Data models, data validation and middleware
-- RESTful API including pagination and sorting
+- RESTful API including pagination,sorting and limiting fields
 - CRUD operations with MongoDB
 - Security: encyption, sanitization and more
 - Authentication with JWT : login and signup
